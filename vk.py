@@ -30,6 +30,10 @@ element = driver.find_element(selenium.webdriver.common.by.By.XPATH, '/html/body
 element.click()
 
 user = get_user.get_user(0)
+print(user[0])
 
 element = driver.find_element(selenium.webdriver.common.by.By.XPATH, '/html/body/div[14]/div/div/div/div[3]/div/div/div[2]/div[1]/div/div/section/div/div/div/div/div/form/div[1]/span/div/div/input')
 element.send_keys(user[0])
+
+element = driver.find_element(selenium.webdriver.common.by.By.XPATH, '/html/body/div[14]/div/div/div/div[3]/div/div/div[2]/div[1]/div/div/section/div/div/div/div/div/form/button[1]/span')
+element.click()
