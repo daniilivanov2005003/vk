@@ -3,7 +3,8 @@ def get_user(line):
     counter = 0
     while (True):
         user = file.readline()
-        if (counter < line):
+        if (counter == line):
             break
+        counter += 1
     user = user.split(':')
     return(user)
