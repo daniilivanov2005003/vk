@@ -1,0 +1,3 @@
+pip install setuptools
+pip install selenium
+pip install blinker==1.7.0 selenium-wire
