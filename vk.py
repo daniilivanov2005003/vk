@@ -22,13 +22,10 @@ class Matka:
         proxy_counter = 0
         user_counter = 0
         while True:
-            proxy = get_proxy(proxy_counter)
-            user = get_user(user_counter)
-            if (proxy == None or user == None):
-                file = open("counters.txt", "w")
-                file.write(str(proxy_counter) + "\n")
-                file.write(str(user_counter))
-                file.close()
+            proxy, user = get_proxy(proxy_counter), get_user(user_counter)
+            if not proxy or not user:
+                with open('counters.txt', 'a') as f:
+                    f.write(f'{proxy_counter}\n{user_counter}')
                 break
             else:
                 proxy_counter += 1
