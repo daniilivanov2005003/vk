@@ -1,15 +1,29 @@
 def get_proxy(proxy_number):
     with open('proxys.txt', 'r') as f:
-        content = f.readlines()
-        for index, line in enumerate(content):
-            if index == proxy_number:
-                proxy = line.strip().split(':')
-                return {
-                    'adress': proxy[0],
-                    'port': proxy[1],
-                    'username': proxy[2],
-                    'password': proxy[3]
-                }
+        try:
+            proxy = f.readlines()[proxy_number].strip().split(':')
+        except IndexError:
+            return None
+        return {
+            'adress': proxy[0],
+            'port': proxy[1],
+            'username': proxy[2],
+            'password': proxy[3]
+            }
+     
+
+#def get_proxy(proxy_number):
+#    with open('proxys.txt', 'r') as f:
+#        content = f.readlines()
+#        for index, line in enumerate(content):
+#            if index == proxy_number:
+#                proxy = line.strip().split(':')
+#                return {
+#                    'adress': proxy[0],
+#                    'port': proxy[1],
+#                    'username': proxy[2],
+#                    'password': proxy[3]
+#                }
 
     #file = open("proxys.txt", "r")
     #counter = 0
